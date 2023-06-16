@@ -1,0 +1,7 @@
+streamlit==1.23.1
+streamlit-ace==0.1.1
+streamlit_code_editor==0.1.5
+SQLAlchemy==2.0.16
+pandasql==0.7.3
+pandas==2.0.2
+pandaserd==0.1.5

@@ -1,0 +1,8 @@
+[
+  {
+    "left_table_name": "consoles",
+    "right_table_name": "games",
+    "on": "Platform",
+    "right_cardinality": "*"
+  }
+]

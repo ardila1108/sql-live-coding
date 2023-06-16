@@ -1,0 +1,14 @@
+[
+  {
+    "left_table_name": "places",
+    "right_table_name": "ratings",
+    "on": "Place_Id",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "users",
+    "right_table_name": "ratings",
+    "on": "User_Id",
+    "right_cardinality": "*"
+  }
+]

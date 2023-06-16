@@ -1,0 +1,20 @@
+[
+  {
+    "left_table_name": "owners",
+    "right_table_name": "pets",
+    "on": "OwnerID",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "pets",
+    "right_table_name": "procedures_history",
+    "on": "PetID",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "procedures_history",
+    "right_table_name": "procedure_details",
+    "on": "ProcedureSubCode",
+    "right_cardinality": "+"
+  }
+]
