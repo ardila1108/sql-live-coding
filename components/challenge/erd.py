@@ -6,9 +6,9 @@ from pandaserd import ERD
 
 
 class EntityRelationshipDiagram(ERD):
-    def __init__(self, db):
+    def __init__(self, path):
         super().__init__()
-        self.path = f"data/{db}"
+        self.path = path
         self.file_dict = self._build_file_dict()
 
     def render(self):
