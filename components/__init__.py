@@ -1,1 +1,0 @@
-from .erd import EntityRelationshipDiagram
