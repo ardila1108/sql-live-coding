@@ -15,7 +15,8 @@ class EntityRelationshipDiagram(ERD):
         self._add_tables()
         self._add_relationships()
         dot_string = self._format_dot_string()
-        st.graphviz_chart(dot_string, use_container_width=False)
+        with st.expander("Entity Relationship Diagram"):
+            st.graphviz_chart(dot_string, use_container_width=False)
 
     def _build_file_dict(self):
         file_list = glob.glob(self.path + "/*.csv")
