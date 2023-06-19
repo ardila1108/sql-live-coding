@@ -5,21 +5,15 @@ import streamlit as st
 
 class TaskDefinition:
     def __init__(self, path, difficulty):
-        self.accepted_difficulties = ["low", "medium", "high"]
         self.question_info = None
-        if difficulty not in self.accepted_difficulties:
-            self.question_info = self._get_question_info(path, difficulty)
+        self._get_question_info(path, difficulty)
 
-    @staticmethod
-    def _get_question_info(path, difficulty):
+    def _get_question_info(self, path, difficulty):
         file_list = [file.split("/")[-1] for file in glob.glob(path + "/*.json")]
-        if "questions.json" not in file_list:
-            return None
-
-        with open(f'{path}/questions.json', 'r') as f:
-            question_info = json.load(f)
-
-        return question_info.get(difficulty)
+        if "questions.json" in file_list:
+            with open(f'{path}/questions.json', 'r') as f:
+                question_info = json.load(f)
+            self.question_info = question_info.get(difficulty)
 
     def render(self):
         if self.question_info:
