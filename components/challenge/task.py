@@ -1,4 +1,5 @@
 import json
+import glob
 import streamlit as st
 
 
@@ -11,6 +12,10 @@ class TaskDefinition:
 
     @staticmethod
     def _get_question_info(path, difficulty):
+        file_list = [file.split("/")[-1] for file in glob.glob(path + "/*.json")]
+        if "questions.json" not in file_list:
+            return None
+
         with open(f'{path}/questions.json', 'r') as f:
             question_info = json.load(f)
 
