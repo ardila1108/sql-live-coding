@@ -4,9 +4,10 @@ import streamlit as st
 
 class TaskDefinition:
     def __init__(self, path, difficulty):
+        self.accepted_difficulties = ["low", "medium", "high"]
         self.question_info = None
-        if difficulty:
-            self.question_info = self._get_question_info(path)
+        if difficulty not in self.accepted_difficulties:
+            self.question_info = self._get_question_info(path, difficulty)
 
     @staticmethod
     def _get_question_info(path, difficulty):

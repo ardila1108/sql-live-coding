@@ -6,7 +6,7 @@
       "average_age"
     ]
   },
-  "mid": {
+  "medium": {
     "statement": "Government has issued an improvement program for touristic places and all of them will be sorted into 'quality' categories. If the average score of a place is below 2.5, it will be marked as 'low', between 2.5 and 4, it will belong to the 'medium' category and above 4 it gets sorted into the 'high' quality category. Return a table that shows the average time spent on places from each of the quality categories",
     "cols": [
       "quality_category",
