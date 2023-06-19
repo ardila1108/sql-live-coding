@@ -6,7 +6,7 @@ class TaskDefinition:
     def __init__(self, path, difficulty):
         self.question_info = None
         if difficulty:
-            self.question_info = self._get_question_info(path, difficulty)
+            self.question_info = self._get_question_info(path)
 
     @staticmethod
     def _get_question_info(path, difficulty):
