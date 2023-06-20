@@ -1,0 +1,19 @@
+[
+  {
+    "left_table_name": "books",
+    "right_table_name": "editions",
+    "on": "BookID",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "books",
+    "right_table_name": "awards",
+    "on": "Title",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "editions",
+    "right_table_name": "publishers",
+    "on": "PubID"
+  }
+]
