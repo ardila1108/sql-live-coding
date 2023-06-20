@@ -1,0 +1,10 @@
+{
+  "medium": {
+    "statement": "The business wants to know the last award of each book. If a book has no awards, report the award name as 'No award'.",
+    "cols": [
+      "BookID",
+      "last_award_name",
+      "year_won"
+    ]
+  }
+}
