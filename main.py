@@ -39,3 +39,7 @@ if "db" in params:
                 {error_msg}
                 """
                 st.error(error_text, icon="🚨")
+            except ValueError as e:
+                e_str = str(e).lower()
+                if "duplicate" in e_str:
+                    st.error("You cannot have two columns with the same name", icon="🚨")
