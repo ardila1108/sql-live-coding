@@ -1,0 +1,9 @@
+{
+  "medium": {
+    "statement": "What are the top 3 users that have generated the highest profit to the company? Profit is defined as the difference between the price paid by the user, and the cost of materials to perform the specific repair job.",
+    "cols": [
+      "user_id",
+      "total_profit"
+    ]
+  }
+}

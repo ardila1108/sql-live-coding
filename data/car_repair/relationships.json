@@ -1,0 +1,20 @@
+[
+  {
+    "left_table_name": "services",
+    "right_table_name": "repairs",
+    "on": "repair_id",
+    "left_cardinality": "*"
+  },
+  {
+    "left_table_name": "repairs",
+    "right_table_name": "material_consumption",
+    "on": "repair_id",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "material_consumption",
+    "right_table_name": "materials",
+    "on": "material_id",
+    "right_cardinality": "*"
+  }
+]
