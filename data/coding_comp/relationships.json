@@ -1,0 +1,16 @@
+[
+  {
+    "left_table_name": "participant",
+    "right_table_name": "submission",
+    "left_on": "id",
+    "right_on": "participant_id",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "challenge",
+    "right_table_name": "submission",
+    "left_on": "id",
+    "right_on": "challenge_id",
+    "right_cardinality": "*"
+  }
+]
