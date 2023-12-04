@@ -5,6 +5,10 @@
       "participant_id",
       "name",
       "total_score"
+    ],
+    "notes": [
+      "A participant passes a challenge if they have a submission associated with said challenge that has a score that is greater than or equal to the challenge's passing score.",
+      "It is guaranteed that each participant has at most one submission related to each challenge."
     ]
   }
 }
