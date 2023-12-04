@@ -1,0 +1,10 @@
+{
+  "medium": {
+    "statement": "Write a query to print the ID, name, and total score of all the participants who passed at\nleast 4 challenges. Order your output in descending order by the total number of challenges\nthe participants passed. If more than one participant passed the same number of challenges,\nthen sort them by ascending participant ID",
+    "cols": [
+      "participant_id",
+      "name",
+      "total_score"
+    ]
+  }
+}
