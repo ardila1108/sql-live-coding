@@ -22,8 +22,8 @@ class TaskDefinition:
             cols = self.question_info.get("cols")
             notes = self.question_info.get("notes")
             st.write(statement)
-            st.write("Considerations:")
             if notes:
+                st.write("Considerations:")
                 for note in notes:
                     st.markdown("- " + note)
             st.write(f"Your result table should have {len(cols)} columns:")
