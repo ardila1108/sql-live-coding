@@ -9,14 +9,19 @@ class EntityRelationshipDiagram(ERD):
     def __init__(self, path):
         super().__init__()
         self.path = path
-        self.file_dict = self._build_file_dict()
 
     def render(self):
-        self._add_tables()
-        self._add_relationships()
-        dot_string = self._format_dot_string()
-        with st.expander("Entity Relationship Diagram"):
-            st.graphviz_chart(dot_string, use_container_width=False)
+        erd_image = self._get_erd_image()
+        if erd_image:
+            with st.expander("Entity Relationship Diagram"):
+                st.image(erd_image)
+        else:
+            file_dict = self._build_file_dict()
+            self._add_tables(file_dict)
+            self._add_relationships()
+            dot_string = self._format_dot_string()
+            with st.expander("Entity Relationship Diagram"):
+                st.graphviz_chart(dot_string, use_container_width=False)
 
     def _build_file_dict(self):
         file_list = glob.glob(self.path + "/*.csv")
@@ -24,8 +29,15 @@ class EntityRelationshipDiagram(ERD):
             file.split("/")[-1].replace(".csv", ""): pd.read_csv(file) for file in file_list
         }
 
-    def _add_tables(self):
-        for name, df in self.file_dict.items():
+    def _get_erd_image(self):
+        erd_image = glob.glob(self.path + "/erd.*")
+        if erd_image:
+            return erd_image[0]
+        else:
+            return None
+
+    def _add_tables(self, file_dict):
+        for name, df in file_dict.items():
             self.add_table(df, name)
 
     def _add_relationships(self):
