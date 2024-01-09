@@ -4,9 +4,9 @@ import streamlit as st
 
 
 class TaskDefinition:
-    def __init__(self, path, difficulty):
+    def __init__(self, database, difficulty):
         self.question_info = None
-        self._get_question_info(path, difficulty)
+        self._get_question_info(database.path, difficulty)
 
     def _get_question_info(self, path, difficulty):
         file_list = [file.split("/")[-1] for file in glob.glob(path + "/*.json")]
