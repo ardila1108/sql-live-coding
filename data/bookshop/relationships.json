@@ -6,6 +6,45 @@
     "right_cardinality": "*"
   },
   {
+    "left_table_name": "editions",
+    "right_table_name": "sales_q1",
+    "on": "ISBN"
+  },
+  {
+    "left_table_name": "editions",
+    "right_table_name": "sales_q2",
+    "on": "ISBN"
+  },
+  {
+    "left_table_name": "editions",
+    "right_table_name": "sales_q3",
+    "on": "ISBN"
+  },
+  {
+    "left_table_name": "editions",
+    "right_table_name": "sales_q4",
+    "on": "ISBN"
+  },
+  {
+    "left_table_name": "books",
+    "right_table_name": "authors",
+    "on": "AuthID",
+    "right_cardinality": "1",
+    "left_cardinality": "1"
+  },
+  {
+    "left_table_name": "books",
+    "right_table_name": "ratings",
+    "on": "BookID",
+    "right_cardinality": "*"
+  },
+  {
+    "left_table_name": "books",
+    "right_table_name": "checkouts",
+    "on": "BookID",
+    "right_cardinality": "*"
+  },
+  {
     "left_table_name": "books",
     "right_table_name": "awards",
     "on": "Title",

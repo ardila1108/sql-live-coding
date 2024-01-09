@@ -1,0 +1,14 @@
+{
+  "medium": {
+    "statement": "Write a query to print the ID, name, and total score of all the participants who passed at\nleast 4 challenges. Order your output in descending order by the total number of challenges\nthe participants passed. If more than one participant passed the same number of challenges,\nthen sort them by ascending participant ID",
+    "cols": [
+      "participant_id",
+      "name",
+      "total_score"
+    ],
+    "notes": [
+      "A participant passes a challenge if they have a submission associated with said challenge that has a score that is greater than or equal to the challenge's passing score.",
+      "It is guaranteed that each participant has at most one submission related to each challenge."
+    ]
+  }
+}

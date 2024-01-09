@@ -20,7 +20,11 @@ class TaskDefinition:
             st.header("Task")
             statement = self.question_info.get("statement")
             cols = self.question_info.get("cols")
+            notes = self.question_info.get("notes")
             st.write(statement)
+            st.write("Considerations:")
+            for note in notes:
+                st.markdown("- " + note)
             st.write(f"Your result table should have {len(cols)} columns:")
             for col in cols:
                 st.markdown("- " + col)
