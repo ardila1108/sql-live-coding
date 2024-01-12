@@ -5,6 +5,8 @@ from streamlit_ace import st_ace
 from pandasql import sqldf
 from pandasql.sqldf import PandaSQLException
 
+from core.database import Database
+
 from components.challenge import ChallengePanel
 
 st.set_page_config(layout="wide")
@@ -46,11 +48,13 @@ else:
     db = params.get("db")[0]
     difficulty = params.get("difficulty", [None])[0]
 
+database = Database(db)
+
 st.markdown("""---""")
 
 challenge, code, result = st.columns(3)
 with challenge:
-    challenge_panel = ChallengePanel(db, difficulty)
+    challenge_panel = ChallengePanel(database, difficulty)
     challenge_panel.render()
 
 with code:
@@ -65,7 +69,7 @@ with result:
     st.subheader("Result")
     if res:
         try:
-            df = sqldf(res, challenge_panel.erd.file_dict)
+            df = sqldf(res, database.file_dict)
             st.write(df)
         except PandaSQLException as e:
             e_str = str(e)

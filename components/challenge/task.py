@@ -4,9 +4,9 @@ import streamlit as st
 
 
 class TaskDefinition:
-    def __init__(self, path, difficulty):
+    def __init__(self, database, difficulty):
         self.question_info = None
-        self._get_question_info(path, difficulty)
+        self._get_question_info(database.path, difficulty)
 
     def _get_question_info(self, path, difficulty):
         file_list = [file.split("/")[-1] for file in glob.glob(path + "/*.json")]
@@ -22,9 +22,10 @@ class TaskDefinition:
             cols = self.question_info.get("cols")
             notes = self.question_info.get("notes")
             st.write(statement)
-            st.write("Considerations:")
-            for note in notes:
-                st.markdown("- " + note)
+            if notes:
+                st.write("Considerations:")
+                for note in notes:
+                    st.markdown("- " + note)
             st.write(f"Your result table should have {len(cols)} columns:")
             for col in cols:
                 st.markdown("- " + col)

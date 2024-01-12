@@ -4,9 +4,8 @@ from components.challenge import EntityRelationshipDiagram, TaskDefinition
 
 class ChallengePanel:
     def __init__(self, db, difficulty):
-        path = f"data/{db}"
-        self.erd = EntityRelationshipDiagram(path)
-        self.task_definition = TaskDefinition(path, difficulty)
+        self.erd = EntityRelationshipDiagram(db)
+        self.task_definition = TaskDefinition(db, difficulty)
 
     def render(self):
         st.write("""
